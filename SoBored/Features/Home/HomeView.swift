@@ -21,21 +21,13 @@ struct HomeView: View {
 						error: $vm.error
 					).task { await vm.fetchRandom() }
 				}
-				.buttonStyle(.borderedProminent)
-				.buttonBorderShape(.roundedRectangle)
-				.controlSize(.large)
-				.tint(.accentColor.opacity(0.75))
-				.font(.title2)
+                .largeBlueButton()
 				.padding()
 
 				NavigationLink("Specific Random Activity") {
 					CustomActivitySearchView()
 				}
-				.buttonStyle(.borderedProminent)
-				.buttonBorderShape(.roundedRectangle)
-				.controlSize(.large)
-				.tint(.accentColor.opacity(0.75))
-				.font(.title2)
+                .largeBlueButton()
 				.padding()
 
 				Spacer()
