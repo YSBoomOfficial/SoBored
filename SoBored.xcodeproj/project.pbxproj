@@ -18,6 +18,7 @@
 		D375C2A828F21A3600B284D2 /* AccessibilityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A728F21A3600B284D2 /* AccessibilityLevelView.swift */; };
 		D375C2AA28F2253800B284D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A928F2253800B284D2 /* HomeView.swift */; };
 		D375C2AF28F22BE000B284D2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2AE28F22BE000B284D2 /* HomeViewModel.swift */; };
+		D39A7CC72914787E00119983 /* NetworkingManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A7CC62914787E00119983 /* NetworkingManaging.swift */; };
 		D3C5A30E28F20662002155A3 /* CustomActivitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C5A30D28F20662002155A3 /* CustomActivitySearchView.swift */; };
 		D3C5A31028F206A2002155A3 /* CustomActivitySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C5A30F28F206A2002155A3 /* CustomActivitySearchViewModel.swift */; };
 		D3F229AA28EE396B00685B95 /* SoBoredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F229A928EE396B00685B95 /* SoBoredApp.swift */; };
@@ -40,6 +41,7 @@
 		D375C2A728F21A3600B284D2 /* AccessibilityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLevelView.swift; sourceTree = "<group>"; };
 		D375C2A928F2253800B284D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D375C2AE28F22BE000B284D2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D39A7CC62914787E00119983 /* NetworkingManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManaging.swift; sourceTree = "<group>"; };
 		D3C5A30D28F20662002155A3 /* CustomActivitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivitySearchView.swift; sourceTree = "<group>"; };
 		D3C5A30F28F206A2002155A3 /* CustomActivitySearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivitySearchViewModel.swift; sourceTree = "<group>"; };
 		D3F229A628EE396B00685B95 /* SoBored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoBored.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,10 +67,8 @@
 		D32F52D528EF3F61007ED0DA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				D32F52D628EF3F71007ED0DA /* QueryType.swift */,
-				D341654428F1FA3E0048819D /* URLBuilder.swift */,
-				D32F52DA28EF44F0007ED0DA /* NetworkManager+NetworkingError.swift */,
-				D32F52D828EF447C007ED0DA /* NetworkingManager.swift */,
+				D39A7CC92914789B00119983 /* URL Builder */,
+				D39A7CC82914789200119983 /* Networking Manager */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -91,6 +91,25 @@
 				D375C2A928F2253800B284D2 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D39A7CC82914789200119983 /* Networking Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D39A7CC62914787E00119983 /* NetworkingManaging.swift */,
+				D32F52DA28EF44F0007ED0DA /* NetworkManager+NetworkingError.swift */,
+				D32F52D828EF447C007ED0DA /* NetworkingManager.swift */,
+			);
+			path = "Networking Manager";
+			sourceTree = "<group>";
+		};
+		D39A7CC92914789B00119983 /* URL Builder */ = {
+			isa = PBXGroup;
+			children = (
+				D32F52D628EF3F71007ED0DA /* QueryType.swift */,
+				D341654428F1FA3E0048819D /* URLBuilder.swift */,
+			);
+			path = "URL Builder";
 			sourceTree = "<group>";
 		};
 		D3C5A30A28F205C7002155A3 /* Features */ = {
@@ -259,6 +278,7 @@
 				D3F229AC28EE396B00685B95 /* ActivityView.swift in Sources */,
 				D375C2A628F217EB00B284D2 /* ActivityTypeLabel.swift in Sources */,
 				D375C2A328F216FA00B284D2 /* CostSymbolView.swift in Sources */,
+				D39A7CC72914787E00119983 /* NetworkingManaging.swift in Sources */,
 				D3F229AA28EE396B00685B95 /* SoBoredApp.swift in Sources */,
 				D375C2AF28F22BE000B284D2 /* HomeViewModel.swift in Sources */,
 				D3023B7C28F39811005AB4E5 /* String+trimmingPrefix.swift in Sources */,

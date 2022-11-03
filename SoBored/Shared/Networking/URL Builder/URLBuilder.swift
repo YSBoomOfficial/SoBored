@@ -24,7 +24,15 @@ final class URLBuilder {
 		components.scheme = "https"
 		components.host = "boredapi.com"
 		components.path = "/api/activity/"
-		components.queryItems = requestQueryItems.map { URLQueryItem(name: $0.key, value: $0.value) }
+        if !requestQueryItems.isEmpty {
+            components.queryItems = requestQueryItems.map {
+                URLQueryItem(name: $0.key, value: $0.value)
+            }
+        }
 		return components.url
 	}
+
+    static var baseURL: URL? {
+        Self().build()
+    }
 }

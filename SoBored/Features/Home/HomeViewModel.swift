@@ -9,12 +9,15 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
 	@Published private(set) var activity: ActivityItem?
-    @Published var error: NetworkingManager.NetworkingError? = nil
+    @Published private(set) var error: NetworkingManager.NetworkingError? = nil
 
 	@MainActor
 	func fetchRandom() async {
 		do {
-			activity = try await NetworkingManager.shared.request(URL(string: "https://www.boredapi.com/api/activity/"), type: ActivityItem.self)
+			activity = try await NetworkingManager.shared.request(
+                URLBuilder.baseURL,
+                type: ActivityItem.self
+            )
 			error = nil
 		} catch {
             activity = nil
