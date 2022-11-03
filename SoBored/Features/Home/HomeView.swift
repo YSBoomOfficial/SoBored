@@ -12,27 +12,15 @@ struct HomeView: View {
 	
 	var body: some View {
 		NavigationView {
-			VStack {
-				Spacer()
-
-				NavigationLink("Any Random Activity") {
-					ActivityView(
-						activity: vm.activity,
-						error: $vm.error
-					).task { await vm.fetchRandom() }
-				}
-                .largeBlueButton()
-				.padding()
-
-				NavigationLink("Specific Random Activity") {
-					CustomActivitySearchView()
-				}
-                .largeBlueButton()
-				.padding()
-
-				Spacer()
-			}
-			.navigationTitle("SoBored")
+            ZStack {
+                Color.systemBackground.ignoresSafeArea()
+                
+                VStack(spacing: 20) {
+                    titleText
+                    navLinks
+                }
+                .layeredBackground()
+            }
 		}
 	}
 }
@@ -42,4 +30,54 @@ struct HomeView_Previews: PreviewProvider {
 		HomeView()
 			.preferredColorScheme(.dark)
 	}
+}
+
+fileprivate extension HomeView {
+    var titleText: some View {
+        VStack(spacing: 0) {
+            Text("So Bored?")
+                .font(
+                    .system(.largeTitle, design: .rounded)
+                    .weight(.bold)
+                )
+            Text("Take your pick")
+                .font(
+                    .system(.title, design: .rounded)
+                )
+                .padding()
+        }
+    }
+
+    var navLinks: some View {
+        VStack(spacing: 40) {
+            NavigationLink("Any Random Activity") {
+                ActivityView(
+                    activity: vm.activity,
+                    error: vm.error
+                ).task { await vm.fetchRandom() }
+            }
+            .largeBlueButton()
+
+            NavigationLink("Specific Random Activity") {
+                CustomActivitySearchView()
+            }
+            .largeBlueButton(invertedGradient: true)
+        }
+    }
+}
+
+fileprivate extension View {
+    func layeredBackground() -> some View {
+        self
+            .padding(16)
+            .background(
+                Color.secondarySystemBackground,
+                in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+            )
+            .padding(8)
+            .background(
+                Color.secondarySystemBackground.opacity(0.5),
+                in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+            )
+    }
 }

@@ -29,7 +29,7 @@ final class NetworkingManager: NetworkingManaging {
 		do {
 			return try JSONDecoder().decode(T.self, from: data)
 		} catch {
-			throw NetworkingError.failedToDecode(error: error)
+			throw NetworkingError.failedToDecode
 		}
 	}
 }

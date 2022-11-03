@@ -11,7 +11,7 @@ struct ActivityView: View {
 	@Environment(\.dismiss) var dismiss
 
 	let activity: ActivityItem?
-	@Binding var error: Error?
+    let error: NetworkingManager.NetworkingError?
 
 	var body: some View {
 		ZStack {
@@ -22,12 +22,7 @@ struct ActivityView: View {
 			} else {
 				VStack(alignment: .leading, spacing: 16) {
 					content
-						.padding(.horizontal, 16)
-						.padding(.vertical, 16)
-						.background(
-							Color.secondarySystemBackground.opacity(0.5),
-							in: RoundedRectangle(cornerRadius: 16, style: .continuous)
-						)
+                        .padding(.horizontal, 4)
 					Spacer()
 				}
 				.padding(.vertical)
@@ -35,23 +30,38 @@ struct ActivityView: View {
 		}
 		.navigationTitle("SoBored")
 		.navigationBarTitleDisplayMode(.inline)
-		.alert(
-			"Oops, Something went wrong!",
-			error: $error
-		) {
-			Button("Ok", action: dismiss.callAsFunction)
-		} message: {
-			Text(error?.localizedDescription ?? "Error")
-		}
-
+        .alert(
+            "Oops, Something went wrong!",
+            isPresented: .constant(error != nil),
+            actions: {
+                Button("Ok", action: dismiss.callAsFunction)
+            },
+            message: {
+                Text(error?.localizedDescription ?? "Error")
+            }
+        )
 	}
 }
 
 struct ActivityView_Previews: PreviewProvider {
-	static var previews: some View {
-		NavigationView {
-			ActivityView(activity: .example1, error: .constant(nil))
-		}
+    static var previews: some View {
+        VStack {
+            NavigationView {
+                ActivityView(
+                    activity: .example1,
+                    error: nil
+                )
+            }
+
+            Divider()
+
+            NavigationView {
+                ActivityView(
+                    activity: .example2,
+                    error: nil
+                )
+            }
+        }
 		.preferredColorScheme(.dark)
 	}
 }
@@ -65,13 +75,17 @@ fileprivate extension ActivityView {
 				detailSection
 				linkSection
 			}
-			.padding(.horizontal, 16)
-			.padding(.vertical, 16)
+            .padding(16)
 			.background(
 				Color.secondarySystemBackground,
 				in: RoundedRectangle(cornerRadius: 16, style: .continuous)
 			)
 		}
+        .padding(8)
+        .background(
+            Color.secondarySystemBackground.opacity(0.5),
+            in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+        )
 	}
 }
 

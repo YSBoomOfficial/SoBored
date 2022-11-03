@@ -9,12 +9,12 @@ import Foundation
 
 final class CustomActivitySearchViewModel: ObservableObject {
 	@Published private(set) var activity: ActivityItem?
+    @Published var error: NetworkingManager.NetworkingError? = nil
 
-	@Published var activityType: ActivityItem.ActivityType = .education
-	@Published var participants = 1.0
-	@Published var activityCost: ActivityItem.Cost = .free
-	@Published var accessibilityLevel: ActivityItem.AccessibilityLevel = .easy
-	@Published var error: Error? = nil
+    @Published var activityType: ActivityItem.ActivityType = .education
+    @Published var participants = 1.0
+    @Published var activityCost: ActivityItem.Cost = .free
+    @Published var accessibilityLevel: ActivityItem.AccessibilityLevel = .easy
 
 	@MainActor
 	func fetch() async {
@@ -43,11 +43,13 @@ final class CustomActivitySearchViewModel: ObservableObject {
 			activity = try await NetworkingManager.shared.request(url, type: ActivityItem.self)
 			error = nil
 		} catch {
-			print("\n\n")
-			print(error.localizedDescription)
-			print("\n\n")
-			activity = nil
-			self.error = error
+            activity = nil
+            print(error.localizedDescription)
+            if let err = error as? NetworkingManager.NetworkingError {
+                self.error = err
+            } else {
+                self.error = .custom(error)
+            }
 		}
 	}
 	
