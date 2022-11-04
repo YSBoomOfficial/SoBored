@@ -1,11 +1,27 @@
 # SoBored
 SoBored is an app that helps you find things to do when you're bored. You can get random activities to cure your boredom, or if you’re in the mood to do something specific, you can also get activities based on specific parameters. 
 
-## How it's built 
+## Screenshots
+| Home Screen | Activity Screen | Custom Search Screen |
+| --- | --- |  --- |
+| ![Home Screen](https://github.com/YSBoomOfficial/SoBored/blob/main/App%20Screenshots/Home.png) | ![Activity Screen](https://github.com/YSBoomOfficial/SoBored/blob/main/App%20Screenshots/Activity.png) | ![Custom Search Screen](https://github.com/YSBoomOfficial/SoBored/blob/main/App%20Screenshots/CustomSearch.png) |
+
+## Bored API
+For more information about the API used in this app see [boredapi.com](https://www.boredapi.com).
+
+## Additional Info
+### How was it built?
 - SwiftUI
 - MVVM Architecture
 - URLSession and Swift Concurrency (async/await) for Networking
+- No 3rd party libraries
 
-## Bored API
-See [boredapi.com](https://www.boredapi.com) for more information.
+### Currently Working on
+- [ ] Adding Unit Tests and UI Tests
+- [ ] Adding more features and fetching options (eg: fetch a list of activities)
+- [ ] Fixing an issue where an alert appears twice
 
+### Focus areas for personal development
+- Good Architecture, Good Project structure and following best practices for SwiftUI
+- Making Views Reusable
+- Experimenting with UI Design (eg: NavigationLink styling on the Home Screen) 
