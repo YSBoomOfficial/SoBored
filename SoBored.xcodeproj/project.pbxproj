@@ -11,7 +11,7 @@
 		D310E914291361E5003D26A6 /* NavigationLink+largeBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310E913291361E5003D26A6 /* NavigationLink+largeBlueButton.swift */; };
 		D32F52D728EF3F71007ED0DA /* QueryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F52D628EF3F71007ED0DA /* QueryType.swift */; };
 		D32F52D928EF447C007ED0DA /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F52D828EF447C007ED0DA /* NetworkingManager.swift */; };
-		D32F52DB28EF44F0007ED0DA /* NetworkManager+NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F52DA28EF44F0007ED0DA /* NetworkManager+NetworkingError.swift */; };
+		D32F52DB28EF44F0007ED0DA /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32F52DA28EF44F0007ED0DA /* NetworkingError.swift */; };
 		D341654528F1FA3E0048819D /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D341654428F1FA3E0048819D /* URLBuilder.swift */; };
 		D375C2A328F216FA00B284D2 /* CostSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A228F216FA00B284D2 /* CostSymbolView.swift */; };
 		D375C2A628F217EB00B284D2 /* ActivityTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A528F217EB00B284D2 /* ActivityTypeLabel.swift */; };
@@ -19,6 +19,9 @@
 		D375C2AA28F2253800B284D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A928F2253800B284D2 /* HomeView.swift */; };
 		D375C2AF28F22BE000B284D2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2AE28F22BE000B284D2 /* HomeViewModel.swift */; };
 		D39A7CC72914787E00119983 /* NetworkingManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A7CC62914787E00119983 /* NetworkingManaging.swift */; };
+		D39A7CE129148FD800119983 /* ActivityItem-example.json in Resources */ = {isa = PBXBuildFile; fileRef = D39A7CE029148FD800119983 /* ActivityItem-example.json */; };
+		D39A7CE62914941300119983 /* NetworkingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A7CE52914941300119983 /* NetworkingManagerTests.swift */; };
+		D39A7CE82914962C00119983 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A7CE72914962C00119983 /* MockURLSessionProtocol.swift */; };
 		D3C5A30E28F20662002155A3 /* CustomActivitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C5A30D28F20662002155A3 /* CustomActivitySearchView.swift */; };
 		D3C5A31028F206A2002155A3 /* CustomActivitySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C5A30F28F206A2002155A3 /* CustomActivitySearchViewModel.swift */; };
 		D3F229AA28EE396B00685B95 /* SoBoredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F229A928EE396B00685B95 /* SoBoredApp.swift */; };
@@ -29,12 +32,22 @@
 		D3F229BF28EE4B0700685B95 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F229BE28EE4B0700685B95 /* Color+Ext.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D39A7CD229148EA700119983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3F2299E28EE396B00685B95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3F229A528EE396B00685B95;
+			remoteInfo = SoBored;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D3023B7B28F39811005AB4E5 /* String+trimmingPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+trimmingPrefix.swift"; sourceTree = "<group>"; };
 		D310E913291361E5003D26A6 /* NavigationLink+largeBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationLink+largeBlueButton.swift"; sourceTree = "<group>"; };
 		D32F52D628EF3F71007ED0DA /* QueryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryType.swift; sourceTree = "<group>"; };
 		D32F52D828EF447C007ED0DA /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
-		D32F52DA28EF44F0007ED0DA /* NetworkManager+NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+NetworkingError.swift"; sourceTree = "<group>"; };
+		D32F52DA28EF44F0007ED0DA /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		D341654428F1FA3E0048819D /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		D375C2A228F216FA00B284D2 /* CostSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostSymbolView.swift; sourceTree = "<group>"; };
 		D375C2A528F217EB00B284D2 /* ActivityTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeLabel.swift; sourceTree = "<group>"; };
@@ -42,6 +55,10 @@
 		D375C2A928F2253800B284D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D375C2AE28F22BE000B284D2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D39A7CC62914787E00119983 /* NetworkingManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManaging.swift; sourceTree = "<group>"; };
+		D39A7CCE29148EA700119983 /* SoBored Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SoBored Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39A7CE029148FD800119983 /* ActivityItem-example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ActivityItem-example.json"; sourceTree = "<group>"; };
+		D39A7CE52914941300119983 /* NetworkingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTests.swift; sourceTree = "<group>"; };
+		D39A7CE72914962C00119983 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
 		D3C5A30D28F20662002155A3 /* CustomActivitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivitySearchView.swift; sourceTree = "<group>"; };
 		D3C5A30F28F206A2002155A3 /* CustomActivitySearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivitySearchViewModel.swift; sourceTree = "<group>"; };
 		D3F229A628EE396B00685B95 /* SoBored.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoBored.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D39A7CCB29148EA700119983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3F229A328EE396B00685B95 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D39A7CC62914787E00119983 /* NetworkingManaging.swift */,
-				D32F52DA28EF44F0007ED0DA /* NetworkManager+NetworkingError.swift */,
+				D32F52DA28EF44F0007ED0DA /* NetworkingError.swift */,
 				D32F52D828EF447C007ED0DA /* NetworkingManager.swift */,
 			);
 			path = "Networking Manager";
@@ -110,6 +134,40 @@
 				D341654428F1FA3E0048819D /* URLBuilder.swift */,
 			);
 			path = "URL Builder";
+			sourceTree = "<group>";
+		};
+		D39A7CCF29148EA700119983 /* SoBored Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D39A7CD829148EF400119983 /* Mocks */,
+				D39A7CE52914941300119983 /* NetworkingManagerTests.swift */,
+			);
+			path = "SoBored Tests";
+			sourceTree = "<group>";
+		};
+		D39A7CD829148EF400119983 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D39A7CDB29148F6100119983 /* Test Data */,
+				D39A7CE2291492F400119983 /* Networking Manager Mock */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		D39A7CDB29148F6100119983 /* Test Data */ = {
+			isa = PBXGroup;
+			children = (
+				D39A7CE029148FD800119983 /* ActivityItem-example.json */,
+			);
+			path = "Test Data";
+			sourceTree = "<group>";
+		};
+		D39A7CE2291492F400119983 /* Networking Manager Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D39A7CE72914962C00119983 /* MockURLSessionProtocol.swift */,
+			);
+			path = "Networking Manager Mock";
 			sourceTree = "<group>";
 		};
 		D3C5A30A28F205C7002155A3 /* Features */ = {
@@ -145,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				D3F229A828EE396B00685B95 /* SoBored */,
+				D39A7CCF29148EA700119983 /* SoBored Tests */,
 				D3F229A728EE396B00685B95 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				D3F229A628EE396B00685B95 /* SoBored.app */,
+				D39A7CCE29148EA700119983 /* SoBored Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +258,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D39A7CCD29148EA700119983 /* SoBored Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39A7CD429148EA700119983 /* Build configuration list for PBXNativeTarget "SoBored Tests" */;
+			buildPhases = (
+				D39A7CCA29148EA700119983 /* Sources */,
+				D39A7CCB29148EA700119983 /* Frameworks */,
+				D39A7CCC29148EA700119983 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D39A7CD329148EA700119983 /* PBXTargetDependency */,
+			);
+			name = "SoBored Tests";
+			productName = "SoBored Tests";
+			productReference = D39A7CCE29148EA700119983 /* SoBored Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D3F229A528EE396B00685B95 /* SoBored */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3F229B428EE396C00685B95 /* Build configuration list for PBXNativeTarget "SoBored" */;
@@ -222,9 +300,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					D39A7CCD29148EA700119983 = {
+						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
+						TestTargetID = D3F229A528EE396B00685B95;
+					};
 					D3F229A528EE396B00685B95 = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -244,11 +327,20 @@
 			projectRoot = "";
 			targets = (
 				D3F229A528EE396B00685B95 /* SoBored */,
+				D39A7CCD29148EA700119983 /* SoBored Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D39A7CCC29148EA700119983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39A7CE129148FD800119983 /* ActivityItem-example.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3F229A428EE396B00685B95 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +353,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D39A7CCA29148EA700119983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39A7CE82914962C00119983 /* MockURLSessionProtocol.swift in Sources */,
+				D39A7CE62914941300119983 /* NetworkingManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D3F229A228EE396B00685B95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,7 +373,7 @@
 				D375C2AA28F2253800B284D2 /* HomeView.swift in Sources */,
 				D32F52D928EF447C007ED0DA /* NetworkingManager.swift in Sources */,
 				D341654528F1FA3E0048819D /* URLBuilder.swift in Sources */,
-				D32F52DB28EF44F0007ED0DA /* NetworkManager+NetworkingError.swift in Sources */,
+				D32F52DB28EF44F0007ED0DA /* NetworkingError.swift in Sources */,
 				D3F229BF28EE4B0700685B95 /* Color+Ext.swift in Sources */,
 				D375C2A828F21A3600B284D2 /* AccessibilityLevelView.swift in Sources */,
 				D3F229AC28EE396B00685B95 /* ActivityView.swift in Sources */,
@@ -288,7 +389,66 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D39A7CD329148EA700119983 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3F229A528EE396B00685B95 /* SoBored */;
+			targetProxy = D39A7CD229148EA700119983 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D39A7CD529148EA700119983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB73YMFXYF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YSBoomOfficial.Quiq-Dict.SoBored-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoBored.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoBored";
+			};
+			name = Debug;
+		};
+		D39A7CD629148EA700119983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB73YMFXYF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.YSBoomOfficial.Quiq-Dict.SoBored-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoBored.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoBored";
+			};
+			name = Release;
+		};
 		D3F229B228EE396C00685B95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -466,6 +626,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D39A7CD429148EA700119983 /* Build configuration list for PBXNativeTarget "SoBored Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39A7CD529148EA700119983 /* Debug */,
+				D39A7CD629148EA700119983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D3F229A128EE396B00685B95 /* Build configuration list for PBXProject "SoBored" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

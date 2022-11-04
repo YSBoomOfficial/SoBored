@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: ActivityItem Base Model
-struct ActivityItem: Codable, Identifiable {
+struct ActivityItem: Codable, Identifiable, Equatable {
 	var id: String { key }
 	
 	/// A unique numeric id
@@ -126,7 +126,8 @@ extension ActivityItem {
 
 extension ActivityItem {
 	static let example1 = ActivityItem(
-		key: "4981819", activity: "Find a DIY to do",
+		key: "4981819",
+        activity: "Find a DIY to do",
 		type: .diy,
 		participants: 1,
 		price: 0.4,
@@ -135,7 +136,8 @@ extension ActivityItem {
 	)
 
 	static let example2 = ActivityItem(
-		key: "8264223", activity: "Learn how to use an Arduino",
+		key: "8264223",
+        activity: "Learn how to use an Arduino",
 		type: .education,
 		participants: 1,
 		price: 0.1,

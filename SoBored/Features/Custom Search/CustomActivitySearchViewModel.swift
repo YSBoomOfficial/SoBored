@@ -9,7 +9,7 @@ import Foundation
 
 final class CustomActivitySearchViewModel: ObservableObject {
 	@Published private(set) var activity: ActivityItem?
-    @Published private(set) var error: NetworkingManager.NetworkingError? = nil
+    @Published private(set) var error: NetworkingError? = nil
 
     @Published var activityType: ActivityItem.ActivityType = .education
     @Published var participants = 1.0
@@ -31,7 +31,7 @@ final class CustomActivitySearchViewModel: ObservableObject {
 		} catch {
             activity = nil
             print(error.localizedDescription)
-            if let err = error as? NetworkingManager.NetworkingError {
+            if let err = error as? NetworkingError {
                 self.error = err
             } else {
                 self.error = .custom(error)

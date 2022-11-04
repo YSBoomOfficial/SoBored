@@ -9,7 +9,7 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
 	@Published private(set) var activity: ActivityItem?
-    @Published private(set) var error: NetworkingManager.NetworkingError? = nil
+    @Published private(set) var error: NetworkingError? = nil
 
 	@MainActor
 	func fetchRandom() async {
@@ -22,7 +22,7 @@ final class HomeViewModel: ObservableObject {
 		} catch {
             activity = nil
             print(error.localizedDescription)
-            if let err = error as? NetworkingManager.NetworkingError {
+            if let err = error as? NetworkingError {
                 self.error = err
             } else {
                 self.error = .custom(error)

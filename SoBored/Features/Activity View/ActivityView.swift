@@ -11,7 +11,7 @@ struct ActivityView: View {
 	@Environment(\.dismiss) var dismiss
 
 	let activity: ActivityItem?
-    let error: NetworkingManager.NetworkingError?
+    let error: NetworkingError?
 
 	var body: some View {
 		ZStack {
