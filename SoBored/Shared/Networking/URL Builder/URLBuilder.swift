@@ -12,6 +12,7 @@ final class URLBuilder {
 
 	@discardableResult
 	func appending(query: QueryType) -> Self {
+        guard !query.queryItems.isEmpty else { return self }
 		for item in query.queryItems {
 			guard requestQueryItems[item.key] == nil else { continue }
 			requestQueryItems[item.key] = item.value
@@ -23,7 +24,7 @@ final class URLBuilder {
 		var components = URLComponents()
 		components.scheme = "https"
 		components.host = "boredapi.com"
-		components.path = "/api/activity/"
+		components.path = "/api/activity"
         if !requestQueryItems.isEmpty {
             components.queryItems = requestQueryItems.map {
                 URLQueryItem(name: $0.key, value: $0.value)
