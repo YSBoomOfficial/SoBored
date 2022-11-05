@@ -56,12 +56,12 @@ fileprivate extension HomeView {
                     error: vm.error
                 ).task { await vm.fetchRandom() }
             }
-            .largeBlueButton()
+            .largeGradientButton()
 
             NavigationLink("Specific Random Activity") {
                 CustomActivitySearchView()
             }
-            .largeBlueButton(invertedGradient: true)
+            .largeGradientButton(invertedGradient: true)
         }
     }
 }

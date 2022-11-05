@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension NavigationLink {
-    func largeBlueButton(invertedGradient: Bool = false) -> some View {
+    func largeGradientButton(invertedGradient: Bool = false) -> some View {
         self
             .buttonStyle(.plain)
             .foregroundColor(.white)

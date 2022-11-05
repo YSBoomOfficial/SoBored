@@ -11,10 +11,14 @@ final class CustomActivitySearchViewModel: ObservableObject {
 	@Published private(set) var activity: ActivityItem?
     @Published private(set) var error: NetworkingError? = nil
 
-    @Published var activityType: ActivityItem.ActivityType = .education
-    @Published var participants = 1.0
-    @Published var activityCost: ActivityItem.Cost = .free
-    @Published var accessibilityLevel: ActivityItem.AccessibilityLevel = .easy
+    @Published var activityType: ActivityItem.ActivityType = .unspecified
+    @Published var participants: Double = 0
+    @Published var activityCost: ActivityItem.Cost = .unspecified
+    @Published var accessibilityLevel: ActivityItem.AccessibilityLevel = .unspecified
+
+    var isEqualToBaseURL: Bool {
+        activityType == .unspecified && participants == 0 && activityCost == .unspecified && accessibilityLevel == .unspecified
+    }
 
 	@MainActor
 	func fetch() async {
@@ -40,25 +44,14 @@ final class CustomActivitySearchViewModel: ObservableObject {
 	}
 
     private func buildURL() -> URL? {
-        let builder = URLBuilder()
-        builder
+        guard !isEqualToBaseURL else { return URLBuilder.baseURL }
+
+        return URLBuilder()
             .appending(query: .type(activityType))
             .appending(query: .participants(Int(participants)))
-
-        switch activityCost {
-            case .free: builder.appending(query: .price(0))
-            case .low: builder.appending(query: .priceRange(0.1...0.3))
-            case .medium: builder.appending(query: .priceRange(0.3...0.6))
-            case .high: builder.appending(query: .priceRange(0.6...1))
-        }
-
-        switch accessibilityLevel {
-            case .easy: builder.appending(query: .priceRange(0...0.3))
-            case .medium: builder.appending(query: .priceRange(0.3...0.6))
-            case .hard: builder.appending(query: .priceRange(0.3...1))
-        }
-
-        return builder.build()
+            .appending(query: .cost(activityCost))
+            .appending(query: .accessibility(accessibilityLevel))
+            .build()
     }
 	
 }

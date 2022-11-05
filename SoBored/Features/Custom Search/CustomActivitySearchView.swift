@@ -19,13 +19,17 @@ struct CustomActivitySearchView: View {
 				accessibilityLevelPicker
 			}
 
-			NavigationLink("Find Activity") {
-                ActivityView(
-                    activity: vm.activity,
-                    error: vm.error
-                ).task { await vm.fetch() }
-			}
-            .foregroundColor(.blue)
+            Section {
+                NavigationLink("Find Activity") {
+                    ActivityView(
+                        activity: vm.activity,
+                        error: vm.error
+                    ).task { await vm.fetch() }
+                }
+                .foregroundColor(.blue)
+            } footer: {
+                searchFooterView
+            }
 		}
 		.navigationTitle("Custom Search")
 	}
@@ -51,9 +55,9 @@ fileprivate extension CustomActivitySearchView {
 
     var participantsSlider: some View {
         VStack(alignment: .leading) {
-            Text("Number of participants: \(vm.participants, format: .number)")
-            Slider(value: $vm.participants, in: 1...10, step: 1, label: EmptyView.init) {
-                Text("1")
+            Text("Number of participants: \(vm.participants > 0 ? String(Int(vm.participants)) : "Any")")
+            Slider(value: $vm.participants, in: 0...10, step: 1, label: EmptyView.init) {
+                Text(vm.participants > 0 ? "1" : "Any")
             } maximumValueLabel: {
                 Text("10")
             }
@@ -64,8 +68,8 @@ fileprivate extension CustomActivitySearchView {
         VStack(alignment: .leading) {
             Text("Price")
             Picker("Price", selection: $vm.activityCost) {
-                ForEach(ActivityItem.Cost.allCases) {
-                    Text($0.rawValue.capitalized).tag($0)
+                ForEach(ActivityItem.Cost.allCases) { costType in
+                    Text(costType.title).tag(costType)
                 }
             }.pickerStyle(.segmented)
         }
@@ -76,9 +80,18 @@ fileprivate extension CustomActivitySearchView {
             Text("Task Difficulty")
             Picker("Task Difficulty", selection: $vm.accessibilityLevel) {
                 ForEach(ActivityItem.AccessibilityLevel.allCases) {
-                    Text($0.rawValue.capitalized).tag($0)
+                    Text($0.title).tag($0)
                 }
             }.pickerStyle(.segmented)
+        }
+    }
+
+    @ViewBuilder
+    var searchFooterView: some View {
+        if vm.isEqualToBaseURL {
+            VStack(alignment: .leading) {
+                Text("Specifying **Any** for all parameters is the same as using the **Any Random Activity** button on the First Screen")
+            }
         }
     }
 }

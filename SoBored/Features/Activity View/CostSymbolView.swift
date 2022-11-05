@@ -14,6 +14,7 @@ struct CostSymbolView: View {
 		HStack(spacing: 0) {
 			let symbol = Locale.current.currencySymbol ?? "$"
 			switch cost {
+                case .unspecified: Text("???").font(.caption)
 				case .free:
 					Text("FREE").font(.caption)
 				case .low:
