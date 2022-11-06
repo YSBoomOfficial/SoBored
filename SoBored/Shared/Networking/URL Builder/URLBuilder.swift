@@ -8,13 +8,16 @@
 import Foundation
 
 final class URLBuilder {
-	private(set) var requestQueryItems = [String: String]()
+	private var requestQueryItems = [String: String]()
 
 	@discardableResult
 	func appending(query: QueryType) -> Self {
         guard !query.queryItems.isEmpty else { return self }
 		for item in query.queryItems {
-			guard requestQueryItems[item.key] == nil else { continue }
+            guard requestQueryItems[item.key] == nil else {
+                assertionFailure("Cannot insert ['\(item.key)' : '\(item.value)'] into `requestQueryItems`.\n A value for this key has already been added. Current Value - ['\(item.key)' : '\(requestQueryItems[item.key]!)']")
+                continue
+            }
 			requestQueryItems[item.key] = item.value
 		}
 		return self

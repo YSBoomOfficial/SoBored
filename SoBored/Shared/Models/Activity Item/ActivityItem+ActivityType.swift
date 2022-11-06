@@ -12,7 +12,7 @@ extension ActivityItem {
     enum ActivityType: String, Codable, CaseIterable, Identifiable {
         var id: String { rawValue }
 
-        case unspecified = "Any"
+        case unspecified = "any"
         case education = "education"
         case recreational = "recreational"
         case social = "social"
