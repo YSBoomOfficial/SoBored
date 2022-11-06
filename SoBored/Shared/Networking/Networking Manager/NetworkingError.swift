@@ -19,10 +19,10 @@ enum NetworkingError: LocalizedError {
             case .invalidStatusCode(let statusCode):
                 switch statusCode {
                     case 404: return "No activity found with the specified parameters"
-                    default: return "The server returned an invalid status code. \(statusCode)"
+                    default: return "The server returned an invalid status code. 'Status Code: \(statusCode)'"
                 }
             case .failedToDecode: return "No activity found with the specified parameters"
             case .custom(let error): return error.localizedDescription
         }
     }
-    }
+}
