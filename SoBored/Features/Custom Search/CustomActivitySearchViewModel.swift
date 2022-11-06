@@ -8,6 +8,8 @@
 import Foundation
 
 final class CustomActivitySearchViewModel: ObservableObject {
+    private let networkingManager: NetworkingManaging
+
 	@Published private(set) var activity: ActivityItem?
     @Published private(set) var error: NetworkingError? = nil
 
@@ -20,6 +22,10 @@ final class CustomActivitySearchViewModel: ObservableObject {
         activityType == .unspecified && participants == 0 && activityCost == .unspecified && accessibilityLevel == .unspecified
     }
 
+    init(networkingManager: NetworkingManaging = NetworkingManager.shared) {
+        self.networkingManager = networkingManager
+    }
+
 	@MainActor
 	func fetch() async {
 		do {
@@ -27,7 +33,8 @@ final class CustomActivitySearchViewModel: ObservableObject {
 			print(url?.absoluteString ?? "NO URL")
             print(url?.pathComponents ?? "NO PATH COMPONENTS")
 
-			activity = try await NetworkingManager.shared.request(
+			activity = try await networkingManager.request(
+                session: .shared,
                 url,
                 type: ActivityItem.self
             )
