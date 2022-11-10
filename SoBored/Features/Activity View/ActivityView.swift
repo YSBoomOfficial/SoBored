@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ActivityView: View {
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
 	@Environment(\.dismiss) var dismiss
 
 	let activity: ActivityItem?
@@ -28,7 +29,7 @@ struct ActivityView: View {
 				.padding(.vertical)
 			}
 		}
-		.navigationTitle("SoBored")
+		.navigationTitle("SoBored?")
 		.navigationBarTitleDisplayMode(.inline)
         .alert(
             "Oops, Something went wrong!",
@@ -45,24 +46,20 @@ struct ActivityView: View {
 
 struct ActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
-            NavigationView {
+        NavigationView {
+            VStack {
                 ActivityView(
                     activity: .example1,
                     error: nil
                 )
-            }
-
-            Divider()
-
-            NavigationView {
                 ActivityView(
                     activity: .example2,
                     error: nil
                 )
+                Spacer()
             }
         }
-		.preferredColorScheme(.dark)
+        .preferredColorScheme(.dark)
 	}
 }
 
@@ -142,6 +139,15 @@ fileprivate extension ActivityView {
 		}
 	}
 
+    @ViewBuilder
+    var detailContent: some View {
+        participantsLabel
+        Divider().frame(height: 15)
+        costLabel
+        Divider().frame(height: 15)
+        AccessibilityLevelView(level: activity!.accessibilityLevel)
+    }
+
 	@ViewBuilder
 	var detailSection: some View {
 		VStack(alignment: .leading, spacing: 8) {
@@ -151,14 +157,17 @@ fileprivate extension ActivityView {
 					.weight(.semibold)
 				)
 
-			HStack(spacing: 8) {
-				participantsLabel
-				Divider().frame(height: 15)
-				costLabel
-				Divider().frame(height: 15)
-				AccessibilityLevelView(level: activity!.accessibilityLevel)
-			}
-			.font(.system(.subheadline, design: .rounded))
+            Group {
+                if dynamicTypeSize >= .accessibility1 {
+                    VStack(alignment: .leading, spacing: 8) {
+                        detailContent
+                    }
+                } else {
+                    HStack(spacing: 8) {
+                        detailContent
+                    }
+                }
+            }.font(.system(.subheadline, design: .rounded))
 		}
 		.frame(maxWidth: .infinity, alignment: .leading)
 	}

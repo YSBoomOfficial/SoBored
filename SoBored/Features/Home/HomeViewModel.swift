@@ -11,7 +11,7 @@ final class HomeViewModel: ObservableObject {
     private let networkingManager: NetworkingManaging
 
 	@Published private(set) var activity: ActivityItem?
-    @Published private(set) var error: NetworkingError? = nil
+    @Published private(set) var error: NetworkingError?
 
     init(networkingManager: NetworkingManaging = NetworkingManager.shared) {
         self.networkingManager = networkingManager

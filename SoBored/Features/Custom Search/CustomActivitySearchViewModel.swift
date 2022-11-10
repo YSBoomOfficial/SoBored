@@ -10,8 +10,8 @@ import Foundation
 final class CustomActivitySearchViewModel: ObservableObject {
     private let networkingManager: NetworkingManaging
 
-	@Published private(set) var activity: ActivityItem?
-    @Published private(set) var error: NetworkingError? = nil
+    @Published private(set) var activity: ActivityItem?
+    @Published private(set) var error: NetworkingError?
 
     @Published var activityType: ActivityItem.ActivityType = .unspecified
     @Published var participants: Double = 0
@@ -19,27 +19,30 @@ final class CustomActivitySearchViewModel: ObservableObject {
     @Published var accessibilityLevel: ActivityItem.AccessibilityLevel = .unspecified
 
     var isEqualToBaseURL: Bool {
-        activityType == .unspecified && participants == 0 && activityCost == .unspecified && accessibilityLevel == .unspecified
+        activityType == .unspecified
+        && participants == 0
+        && activityCost == .unspecified
+        && accessibilityLevel == .unspecified
     }
 
     init(networkingManager: NetworkingManaging = NetworkingManager.shared) {
         self.networkingManager = networkingManager
     }
 
-	@MainActor
-	func fetch() async {
-		do {
-			let url = buildURL()
-			print(url?.absoluteString ?? "NO URL")
+    @MainActor
+    func fetch() async {
+        do {
+            let url = buildURL()
+            print(url?.absoluteString ?? "NO URL")
             print(url?.pathComponents ?? "NO PATH COMPONENTS")
 
-			activity = try await networkingManager.request(
+            activity = try await networkingManager.request(
                 session: .shared,
                 url,
                 type: ActivityItem.self
             )
-			error = nil
-		} catch {
+            error = nil
+        } catch {
             activity = nil
             print(error.localizedDescription)
             if let err = error as? NetworkingError {
@@ -47,8 +50,8 @@ final class CustomActivitySearchViewModel: ObservableObject {
             } else {
                 self.error = .custom(error)
             }
-		}
-	}
+        }
+    }
 
     private func buildURL() -> URL? {
         guard !isEqualToBaseURL else { return URLBuilder.baseURL }
@@ -60,5 +63,5 @@ final class CustomActivitySearchViewModel: ObservableObject {
             .appending(query: .accessibility(accessibilityLevel))
             .build()
     }
-	
+
 }

@@ -57,11 +57,13 @@ fileprivate extension HomeView {
                 ).task { await vm.fetchRandom() }
             }
             .largeGradientButton()
+            .multilineTextAlignment(.center)
 
             NavigationLink("Specific Random Activity") {
                 CustomActivitySearchView()
             }
             .largeGradientButton(invertedGradient: true)
+            .multilineTextAlignment(.center)
         }
     }
 }
