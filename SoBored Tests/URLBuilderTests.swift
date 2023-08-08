@@ -10,7 +10,7 @@ import XCTest
 
 final class URLBuilderTests: XCTestCase {
 
-    func test_URLBuilder_base_URL_is_correct() {
+    func test_baseURL_isCorrect() {
         let builderURLBase = URLBuilder.baseURL
         let testURLBase = makeURL()
 
@@ -20,7 +20,7 @@ final class URLBuilderTests: XCTestCase {
         XCTAssertEqual(builderURLBase, testURLBase, "URLBuilder's url and and the helper function should return the same URL (Base URL)")
     }
 
-    func test_URLBuilder_returns_correct_url_with_correct_query_parameter_for_ActivityItem_ID() {
+    func test_build_returnsCorrectURL_for_ActivityItem_ID() {
         let builderURLActivityID = URLBuilder()
             .appending(query: .id(ActivityItem.example2.id))
             .build()
@@ -35,7 +35,7 @@ final class URLBuilderTests: XCTestCase {
         XCTAssertEqual(builderURLActivityID, testURLActivityID, "URLBuilder's url and and the helper function should return the same URL (ActivityID)")
     }
 
-    func test_URLBuilder_returns_correct_url_with_correct_query_parameter_for_ActivityItem_ActivityType() {
+    func test_build_returnsCorrectURL_for_ActivityItem_ActivityType() {
         let builderURLActivityTypeUnspecified = URLBuilder()
             .appending(query: .type(.unspecified))
             .build()
@@ -64,7 +64,7 @@ final class URLBuilderTests: XCTestCase {
 
     }
 
-    func test_URLBuilder_returns_correct_url_with_correct_query_parameter_for_ActivityItem_participants() {
+    func test_build_returnsCorrectURL_for_ActivityItem_participants() {
         // MARK: Unspecified number of Participants (0)
         let builderURLParticipantsUnspecified  = URLBuilder()
             .appending(query: .participants(0))
@@ -92,7 +92,7 @@ final class URLBuilderTests: XCTestCase {
         XCTAssertEqual(builderURLParticipants, testURLParticipants, "URLBuilder's url and and the helper function should return the same URL (Participants)")
     }
 
-    func test_URLBuilder_returns_correct_url_with_correct_query_parameter_for_ActivityItem_Cost() {
+    func test_build_returnsCorrectURL_for_ActivityItem_Cost() {
         // MARK: Activity Cost Unspecified
         let builderURLActivityCostUnspecified = URLBuilder()
             .appending(query: .cost(.unspecified))
@@ -172,7 +172,7 @@ final class URLBuilderTests: XCTestCase {
 
     }
 
-    func test_URLBuilder_returns_correct_url_with_correct_query_parameter_for_ActivityItem_AccessibilityLevel() {
+    func test_build_returnsCorrectURL_for_ActivityItem_AccessibilityLevel() {
         // MARK: Activity AccessibilityLevel Unspecified
         let builderURLActivityAccessibilityLevelUnspecified = URLBuilder()
             .appending(query: .accessibility(.unspecified))

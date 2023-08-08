@@ -20,13 +20,16 @@
 		D35D177F2916071100A2F7E6 /* ActivityItem+ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D177E2916071100A2F7E6 /* ActivityItem+ActivityType.swift */; };
 		D35D17812916073400A2F7E6 /* ActivityItem+Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D17802916073400A2F7E6 /* ActivityItem+Cost.swift */; };
 		D35D17832916075300A2F7E6 /* ActivityItem+AccessibilityLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D17822916075200A2F7E6 /* ActivityItem+AccessibilityLevel.swift */; };
+		D372B85C2A827D2100F4236A /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372B85B2A827D2100F4236A /* CustomError.swift */; };
 		D375C2A328F216FA00B284D2 /* CostSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A228F216FA00B284D2 /* CostSymbolView.swift */; };
 		D375C2A628F217EB00B284D2 /* ActivityTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A528F217EB00B284D2 /* ActivityTypeLabel.swift */; };
 		D375C2A828F21A3600B284D2 /* AccessibilityLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A728F21A3600B284D2 /* AccessibilityLevelView.swift */; };
 		D375C2AA28F2253800B284D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2A928F2253800B284D2 /* HomeView.swift */; };
 		D375C2AF28F22BE000B284D2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D375C2AE28F22BE000B284D2 /* HomeViewModel.swift */; };
+		D39872A52A82760300B8177F /* MockNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39872A42A82760300B8177F /* MockNetworkingManager.swift */; };
+		D39872A72A82777200B8177F /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39872A62A82777200B8177F /* HomeViewModelTest.swift */; };
+		D39872A92A827C6A00B8177F /* CustomActivitySearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39872A82A827C6A00B8177F /* CustomActivitySearchViewModelTest.swift */; };
 		D39A7CC72914787E00119983 /* NetworkingManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A7CC62914787E00119983 /* NetworkingManaging.swift */; };
-		D39A7CE129148FD800119983 /* ActivityItem-example.json in Resources */ = {isa = PBXBuildFile; fileRef = D39A7CE029148FD800119983 /* ActivityItem-example.json */; };
 		D39A7CE62914941300119983 /* NetworkingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A7CE52914941300119983 /* NetworkingManagerTests.swift */; };
 		D39A7CE82914962C00119983 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39A7CE72914962C00119983 /* MockURLSessionProtocol.swift */; };
 		D3C5A30E28F20662002155A3 /* CustomActivitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C5A30D28F20662002155A3 /* CustomActivitySearchView.swift */; };
@@ -63,14 +66,17 @@
 		D35D177E2916071100A2F7E6 /* ActivityItem+ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityItem+ActivityType.swift"; sourceTree = "<group>"; };
 		D35D17802916073400A2F7E6 /* ActivityItem+Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityItem+Cost.swift"; sourceTree = "<group>"; };
 		D35D17822916075200A2F7E6 /* ActivityItem+AccessibilityLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityItem+AccessibilityLevel.swift"; sourceTree = "<group>"; };
+		D372B85B2A827D2100F4236A /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		D375C2A228F216FA00B284D2 /* CostSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostSymbolView.swift; sourceTree = "<group>"; };
 		D375C2A528F217EB00B284D2 /* ActivityTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeLabel.swift; sourceTree = "<group>"; };
 		D375C2A728F21A3600B284D2 /* AccessibilityLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLevelView.swift; sourceTree = "<group>"; };
 		D375C2A928F2253800B284D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D375C2AE28F22BE000B284D2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D39872A42A82760300B8177F /* MockNetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkingManager.swift; sourceTree = "<group>"; };
+		D39872A62A82777200B8177F /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		D39872A82A827C6A00B8177F /* CustomActivitySearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivitySearchViewModelTest.swift; sourceTree = "<group>"; };
 		D39A7CC62914787E00119983 /* NetworkingManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManaging.swift; sourceTree = "<group>"; };
 		D39A7CCE29148EA700119983 /* SoBored Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SoBored Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D39A7CE029148FD800119983 /* ActivityItem-example.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "ActivityItem-example.json"; sourceTree = "<group>"; };
 		D39A7CE52914941300119983 /* NetworkingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManagerTests.swift; sourceTree = "<group>"; };
 		D39A7CE72914962C00119983 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
 		D3C5A30D28F20662002155A3 /* CustomActivitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivitySearchView.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D357ADB8291737EF00762A69 /* NetworkingError+Equatable.swift */,
+				D372B85B2A827D2100F4236A /* CustomError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -177,6 +184,8 @@
 				D39A7CD829148EF400119983 /* Mocks */,
 				D39A7CE52914941300119983 /* NetworkingManagerTests.swift */,
 				D357ADBA291741D800762A69 /* URLBuilderTests.swift */,
+				D39872A62A82777200B8177F /* HomeViewModelTest.swift */,
+				D39872A82A827C6A00B8177F /* CustomActivitySearchViewModelTest.swift */,
 			);
 			path = "SoBored Tests";
 			sourceTree = "<group>";
@@ -184,26 +193,10 @@
 		D39A7CD829148EF400119983 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				D39A7CDB29148F6100119983 /* Test Data */,
-				D39A7CE2291492F400119983 /* Networking Manager Mock */,
+				D39A7CE72914962C00119983 /* MockURLSessionProtocol.swift */,
+				D39872A42A82760300B8177F /* MockNetworkingManager.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		D39A7CDB29148F6100119983 /* Test Data */ = {
-			isa = PBXGroup;
-			children = (
-				D39A7CE029148FD800119983 /* ActivityItem-example.json */,
-			);
-			path = "Test Data";
-			sourceTree = "<group>";
-		};
-		D39A7CE2291492F400119983 /* Networking Manager Mock */ = {
-			isa = PBXGroup;
-			children = (
-				D39A7CE72914962C00119983 /* MockURLSessionProtocol.swift */,
-			);
-			path = "Networking Manager Mock";
 			sourceTree = "<group>";
 		};
 		D3C5A30A28F205C7002155A3 /* Features */ = {
@@ -374,7 +367,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D39A7CE129148FD800119983 /* ActivityItem-example.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,9 +387,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D39A7CE82914962C00119983 /* MockURLSessionProtocol.swift in Sources */,
+				D372B85C2A827D2100F4236A /* CustomError.swift in Sources */,
 				D357ADBB291741D800762A69 /* URLBuilderTests.swift in Sources */,
+				D39872A52A82760300B8177F /* MockNetworkingManager.swift in Sources */,
+				D39872A72A82777200B8177F /* HomeViewModelTest.swift in Sources */,
 				D357ADB9291737EF00762A69 /* NetworkingError+Equatable.swift in Sources */,
 				D39A7CE62914941300119983 /* NetworkingManagerTests.swift in Sources */,
+				D39872A92A827C6A00B8177F /* CustomActivitySearchViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

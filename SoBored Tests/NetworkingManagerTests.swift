@@ -26,12 +26,8 @@ final class NetworkingManagerTests: XCTestCase {
         session = nil
     }
 
-    func test_network_manager_success_returns_correct_response() async throws {
-        guard let path = Bundle(for: Self.self).path(forResource: "ActivityItem-example", ofType: "json"),
-              let data = FileManager.default.contents(atPath: path) else {
-            XCTFail("file ActivityItem-example.json not found")
-            return
-        }
+    func test_request_returnsSuccessfulResponse() async throws {
+		let data = try! JSONEncoder().encode(ActivityItem.example2)
 
         MockURLSessionProtocol.loadingHandler = {
             let response = HTTPURLResponse(
@@ -45,11 +41,7 @@ final class NetworkingManagerTests: XCTestCase {
         }
 
         do {
-            let result = try await NetworkingManager.shared.request(
-                session: session,
-                url,
-                type: ActivityItem.self
-            )
+			let result: ActivityItem = try await NetworkingManager.shared.request(session: session, url)
 
             XCTAssertEqual(result, ActivityItem.example2, "Decoded Data and Example Data should be the same")
         } catch {
@@ -57,24 +49,9 @@ final class NetworkingManagerTests: XCTestCase {
         }
     }
 
-    func test_network_manager_failure_invalidURL_error_thrown() async throws {
-        MockURLSessionProtocol.loadingHandler = {
-            let response = HTTPURLResponse(
-                url: URL(string: "")!,
-                statusCode: 404,
-                httpVersion: nil,
-                headerFields: nil
-            )
-
-            return (response!, nil)
-        }
-
+	func test_request_throwsInvalidURLError_whenURLInvalid() async throws {
         do {
-            _ = try await NetworkingManager.shared.request(
-                session: session,
-                URL(string: ""),
-                type: ActivityItem.self
-            )
+			let _: ActivityItem = try await NetworkingManager.shared.request(session: session, nil)
         } catch {
             guard let err = error as? NetworkingError else {
                 XCTFail("Should be NetworkingError")
@@ -89,7 +66,7 @@ final class NetworkingManagerTests: XCTestCase {
         XCTFail("Should not skip catch block")
     }
 
-    func test_network_manager_failure_invalidStatusCode_404_error_thrown() async throws {
+    func test_request_throwsInvalidStatusCodeError_whenAPIReturns404StatusCode() async throws {
         MockURLSessionProtocol.loadingHandler = {
             let response = HTTPURLResponse(
                 url: self.url,
@@ -102,11 +79,7 @@ final class NetworkingManagerTests: XCTestCase {
         }
 
         do {
-            _ = try await NetworkingManager.shared.request(
-                session: session,
-                url,
-                type: ActivityItem.self
-            )
+            let _: ActivityItem = try await NetworkingManager.shared.request(session: session, url)
         } catch {
             guard let err = error as? NetworkingError else {
                 XCTFail("Should be NetworkingError")
@@ -121,7 +94,7 @@ final class NetworkingManagerTests: XCTestCase {
         XCTFail("Should not skip catch block")
     }
 
-    func test_network_manager_failure_invalidStatusCode_error_thrown() async throws {
+    func test_request_throwsInvalidStatusCodeError_whenAPIReturnsUnknownStatusCode() async throws {
         MockURLSessionProtocol.loadingHandler = {
             let response = HTTPURLResponse(
                 url: self.url,
@@ -134,11 +107,7 @@ final class NetworkingManagerTests: XCTestCase {
         }
 
         do {
-            _ = try await NetworkingManager.shared.request(
-                session: session,
-                url,
-                type: ActivityItem.self
-            )
+			let _: ActivityItem = try await NetworkingManager.shared.request(session: session, url)
         } catch {
             guard let err = error as? NetworkingError else {
                 XCTFail("Should be NetworkingError")
@@ -153,7 +122,7 @@ final class NetworkingManagerTests: XCTestCase {
         XCTFail("Should not skip catch block")
     }
 
-    func test_network_manager_failure_failedToDecode_error_thrown() async throws {
+    func test_request_throwsFailedToDecodeError_whenDecodingAPIResponseFails() async throws {
         MockURLSessionProtocol.loadingHandler = {
             let response = HTTPURLResponse(
                 url: self.url,
@@ -166,11 +135,7 @@ final class NetworkingManagerTests: XCTestCase {
         }
 
         do {
-            _ = try await NetworkingManager.shared.request(
-                session: session,
-                url,
-                type: ActivityItem.self
-            )
+			let _: ActivityItem = try await NetworkingManager.shared.request(session: session, url)
         } catch {
             guard let err = error as? NetworkingError else {
                 XCTFail("Should be NetworkingError")

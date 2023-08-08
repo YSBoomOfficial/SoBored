@@ -21,7 +21,6 @@ For more information about the API used in this app see [boredapi.com](https://w
 	- [`NetworkingManager`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/Networking%20Manager/NetworkingManager.swift) and [`NetworkingError`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/Networking%20Manager/NetworkingError.swift) - [Unit Tests](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored%20Tests/NetworkingManagerTests.swift)
 	- [`URLBuilder`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/URL%20Builder/URLBuilder.swift) and [`QueryType`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/URL%20Builder/QueryType.swift) - [Unit Tests](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored%20Tests/URLBuilderTests.swift)
 - [ ] Adding more features and fetching options (eg: fetch a list of activities)
-- [ ] Fixing an issue where an alert appears twice
 
 ### Focus areas for personal development
 - Good Architecture, Good Project structure and following best practices for SwiftUI
