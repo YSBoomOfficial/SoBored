@@ -12,7 +12,7 @@ struct AccessibilityLevelView: View {
 
     var title: String {
         switch level {
-            case .unspecified: return "???"
+            case .unspecified: return "Unknown"
             case .easy: return "An easy task"
             case .medium: return "A moderate task"
             case .hard: return "A challenging task"
@@ -40,10 +40,8 @@ struct AccessibilityLevelView: View {
 
 struct AccessibilityLevelView_Previews: PreviewProvider {
 	static var previews: some View {
-		VStack {
-			ForEach(ActivityItem.AccessibilityLevel.allCases) {
-				AccessibilityLevelView(level: $0)
-			}
-		}
+		VStack(alignment: .leading, spacing: 10) {
+			ForEach(ActivityItem.AccessibilityLevel.allCases, content: AccessibilityLevelView.init(level:))
+		}.preferredColorScheme(.dark)
 	}
 }

@@ -9,6 +9,8 @@ import Foundation
 
 // MARK: ActivityItem + examples
 extension ActivityItem {
+	static let examples: [ActivityItem] = [example1, .example2]
+
     static let example1 = ActivityItem(
         key: "4981819",
         activity: "Find a DIY to do",

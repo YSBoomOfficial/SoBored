@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkingManaging {
-    func request<T: Decodable>(session: URLSession, _ url: URL?, type: T.Type) async throws -> T
+    func request<T: Decodable>(session: URLSession, _ url: URL?) async throws -> T
 }

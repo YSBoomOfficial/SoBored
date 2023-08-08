@@ -22,5 +22,6 @@ struct ActivityTypeLabel: View {
 struct ActivityTypeLabel_Previews: PreviewProvider {
 	static var previews: some View {
 		ActivityTypeLabel(type: .education)
+			.preferredColorScheme(.dark)
 	}
 }

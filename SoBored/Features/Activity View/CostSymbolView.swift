@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CostSymbolView: View {
 	let cost: ActivityItem.Cost
+	private let symbol = Locale.current.currencySymbol ?? "$"
 
 	var body: some View {
 		HStack(spacing: 0) {
-			let symbol = Locale.current.currencySymbol ?? "$"
 			switch cost {
                 case .unspecified: Text("???").font(.caption)
 				case .free:
@@ -42,10 +42,8 @@ struct CostSymbolView: View {
 
 struct CostSymbolView_Previews: PreviewProvider {
 	static var previews: some View {
-		VStack {
-			ForEach(ActivityItem.Cost.allCases) { cost in
-				CostSymbolView(cost: cost)
-			}
-		}
+		VStack(spacing: 10) {
+			ForEach(ActivityItem.Cost.allCases, content: CostSymbolView.init(cost:))
+		}.preferredColorScheme(.dark)
 	}
 }

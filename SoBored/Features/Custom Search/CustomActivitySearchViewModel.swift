@@ -18,7 +18,7 @@ final class CustomActivitySearchViewModel: ObservableObject {
     @Published var activityCost: ActivityItem.Cost = .unspecified
     @Published var accessibilityLevel: ActivityItem.AccessibilityLevel = .unspecified
 
-    var isEqualToBaseURL: Bool {
+    private var isEqualToBaseURL: Bool {
         activityType == .unspecified
         && participants == 0
         && activityCost == .unspecified
@@ -31,6 +31,9 @@ final class CustomActivitySearchViewModel: ObservableObject {
 
     @MainActor
     func fetch() async {
+		activity = nil
+		error = nil
+
         do {
             let url = buildURL()
             print(url?.absoluteString ?? "NO URL")
@@ -38,8 +41,7 @@ final class CustomActivitySearchViewModel: ObservableObject {
 
             activity = try await networkingManager.request(
                 session: .shared,
-                url,
-                type: ActivityItem.self
+				url
             )
             error = nil
         } catch {

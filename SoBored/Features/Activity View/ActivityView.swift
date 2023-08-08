@@ -11,36 +11,21 @@ struct ActivityView: View {
     @Environment(\.dynamicTypeSize) var dynamicTypeSize
 	@Environment(\.dismiss) var dismiss
 
-	let activity: ActivityItem?
-    let error: NetworkingError?
+	let activity: ActivityItem
 
 	var body: some View {
 		ZStack {
 			Color.systemBackground.ignoresSafeArea()
 
-			if activity == nil {
-				ProgressView("Loading...")
-			} else {
-				VStack(alignment: .leading, spacing: 16) {
-					content
-                        .padding(.horizontal, 4)
-					Spacer()
-				}
-				.padding(.vertical)
+			VStack(alignment: .leading, spacing: 16) {
+				content
+					.padding(.horizontal, 4)
+				Spacer()
 			}
+			.padding(.vertical)
 		}
 		.navigationTitle("SoBored?")
 		.navigationBarTitleDisplayMode(.inline)
-        .alert(
-            "Oops, Something went wrong!",
-            isPresented: .constant(error != nil),
-            actions: {
-                Button("Ok", action: dismiss.callAsFunction)
-            },
-            message: {
-                Text(error?.localizedDescription ?? "Error")
-            }
-        )
 	}
 }
 
@@ -48,14 +33,8 @@ struct ActivityView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             VStack {
-                ActivityView(
-                    activity: .example1,
-                    error: nil
-                )
-                ActivityView(
-                    activity: .example2,
-                    error: nil
-                )
+                ActivityView(activity: .example1)
+                ActivityView(activity: .example2)
                 Spacer()
             }
         }
@@ -95,8 +74,8 @@ fileprivate extension ActivityView {
 				.system(.body, design: .rounded)
 				.weight(.semibold)
 			)
-
-		Text(activity!.activity)
+//
+		Text(activity.activity)
 			.font(.system(.subheadline, design: .rounded))
 	}
 
@@ -108,7 +87,7 @@ fileprivate extension ActivityView {
 				.weight(.semibold)
 			)
 
-		ActivityTypeLabel(type: activity!.type)
+		ActivityTypeLabel(type: activity.type)
 			.font(.system(.subheadline, design: .rounded))
 	}
 
@@ -125,9 +104,9 @@ fileprivate extension ActivityView {
 fileprivate extension ActivityView {
 	var participantsLabel: some View {
 		Label {
-			activity!.participants == 1 ? Text("Participant") : Text("Participants")
+			activity.participants == 1 ? Text("Participant") : Text("Participants")
 		} icon: {
-			Image(systemName: "\(activity!.participants).circle.fill")
+			Image(systemName: "\(activity.participants).circle.fill")
 		}
 	}
 
@@ -135,7 +114,7 @@ fileprivate extension ActivityView {
 		Label {
 			Text("Cost")
 		} icon: {
-			CostSymbolView(cost: activity!.cost)
+			CostSymbolView(cost: activity.cost)
 		}
 	}
 
@@ -145,7 +124,7 @@ fileprivate extension ActivityView {
         Divider().frame(height: 15)
         costLabel
         Divider().frame(height: 15)
-        AccessibilityLevelView(level: activity!.accessibilityLevel)
+        AccessibilityLevelView(level: activity.accessibilityLevel)
     }
 
 	@ViewBuilder
@@ -177,10 +156,10 @@ fileprivate extension ActivityView {
 fileprivate extension ActivityView {
 	@ViewBuilder
 	var activityLink: some View {
-		if let url = activity!.activityURL {
+		if let url = activity.activityURL {
 			Link(destination: url) {
 				Label {
-					Text(activity!.link.trimmingPrefix("https://"))
+					Text(activity.link.trimmingPrefix("https://"))
 				} icon: {
 					Image(systemName: "link")
 				}
@@ -190,7 +169,7 @@ fileprivate extension ActivityView {
 
 	@ViewBuilder
 	var linkSection: some View {
-		if activity!.activityURL != nil {
+		if activity.activityURL != nil {
 			VStack(alignment: .leading, spacing: 8) {
 				Text("Helpful link to get you started")
 					.font(

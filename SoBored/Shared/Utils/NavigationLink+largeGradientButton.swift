@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension NavigationLink {
+extension View {
     func largeGradientButton(invertedGradient: Bool = false) -> some View {
         self
             .buttonStyle(.plain)
