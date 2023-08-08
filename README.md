@@ -16,13 +16,17 @@ For more information about the API used in this app see [boredapi.com](https://w
 - URLSession and Swift Concurrency (async/await) for Networking
 - No 3rd party libraries
 
-### Currently Working on
-- [ ] Adding Unit Tests and UI Tests
-	- [`NetworkingManager`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/Networking%20Manager/NetworkingManager.swift) and [`NetworkingError`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/Networking%20Manager/NetworkingError.swift) - [Unit Tests](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored%20Tests/NetworkingManagerTests.swift)
-	- [`URLBuilder`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/URL%20Builder/URLBuilder.swift) and [`QueryType`](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored/Shared/Networking/URL%20Builder/QueryType.swift) - [Unit Tests](https://github.com/YSBoomOfficial/SoBored/blob/main/SoBored%20Tests/URLBuilderTests.swift)
-- [ ] Adding more features and fetching options (eg: fetch a list of activities)
-
 ### Focus areas for personal development
 - Good Architecture, Good Project structure and following best practices for SwiftUI
 - Making Views Reusable
-- Experimenting with UI Design (eg: NavigationLink styling on the Home Screen) 
+- Experimenting with UI Design (eg: NavigationLink styling on the Home Screen)
+- Getting better at Testing 
+
+### Future Directions/ Feature Suggestions
+- fetch a list of activities
+- allow user to save activities locally (tbd: `CoreData`, `GRDB`, `Realm`)
+- allow user to start and complete activities. (`ActivityKit`/ Live Activities, Timer API)
+- use `WidgetKit` to make a Random Activity Widget 
+- Remind user to complete activities (`UNUserNotification`)
+
+- make custom backend to remove reliance on 3rd party service (tbd: `Spring Boot`, `Vapor`)
