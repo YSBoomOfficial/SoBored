@@ -6,8 +6,11 @@ SoBored is an app that helps you find things to do when you're bored. You can ge
 | --- | --- |  --- |
 | ![Home Screen](https://github.com/YSBoomOfficial/SoBored/blob/main/App%20Screenshots/Home.png) | ![Activity Screen](https://github.com/YSBoomOfficial/SoBored/blob/main/App%20Screenshots/Activity.png) | ![Custom Search Screen](https://github.com/YSBoomOfficial/SoBored/blob/main/App%20Screenshots/CustomSearch.png) |
 
-## Bored API
-For more information about the API used in this app see [boredapi.com](https://www.boredapi.com).
+## Vapor Backend
+
+The [Backend for SoBored App](https://github.com/YSBoomOfficial/SoBoredBackend) is currently being developed in Vapor.
+
+Prior to this I used [boredapi.com](https://www.boredapi.com).
 
 ## Additional Info
 ### How was it built?
@@ -28,5 +31,3 @@ For more information about the API used in this app see [boredapi.com](https://w
 - allow user to start and complete activities. (`ActivityKit`/ Live Activities, Timer API)
 - use `WidgetKit` to make a Random Activity Widget 
 - Remind user to complete activities (`UNUserNotification`)
-
-- make custom backend to remove reliance on 3rd party service (tbd: `Spring Boot`, `Vapor`)
