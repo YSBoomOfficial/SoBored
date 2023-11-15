@@ -25,6 +25,11 @@ final class NetworkingManager: NetworkingManaging {
 		do {
 			return try JSONDecoder().decode(T.self, from: data)
 		} catch {
+            print("\n\n\n")
+            print(error)
+            print("\n\n\n")
+            print(error.localizedDescription)
+            print("\n\n\n")
 			throw NetworkingError.failedToDecode
 		}
 	}

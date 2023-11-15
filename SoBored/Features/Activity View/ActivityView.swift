@@ -138,13 +138,9 @@ fileprivate extension ActivityView {
 
             Group {
                 if dynamicTypeSize >= .accessibility1 {
-                    VStack(alignment: .leading, spacing: 8) {
-                        detailContent
-                    }
+                    VStack(alignment: .leading, spacing: 8) { detailContent }
                 } else {
-                    HStack(spacing: 8) {
-                        detailContent
-                    }
+                    HStack(spacing: 8) { detailContent }
                 }
             }.font(.system(.subheadline, design: .rounded))
 		}
@@ -158,11 +154,7 @@ fileprivate extension ActivityView {
 	var activityLink: some View {
 		if let url = activity.activityURL {
 			Link(destination: url) {
-				Label {
-					Text(activity.link.trimmingPrefix("https://"))
-				} icon: {
-					Image(systemName: "link")
-				}
+                Label(activity.simplifiedURLString!, systemImage: "link")
 			}.font(.system(.subheadline, design: .rounded))
 		}
 	}

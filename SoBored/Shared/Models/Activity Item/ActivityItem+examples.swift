@@ -12,17 +12,16 @@ extension ActivityItem {
 	static let examples: [ActivityItem] = [example1, .example2]
 
     static let example1 = ActivityItem(
-        key: "4981819",
+        id: UUID(),
         activity: "Find a DIY to do",
         type: .diy,
         participants: 1,
         price: 0.4,
-        accessibility: 0.3,
-        link: ""
+        accessibility: 0.3
     )
 
     static let example2 = ActivityItem(
-        key: "8264223",
+        id: UUID(),
         activity: "Learn how to use an Arduino",
         type: .education,
         participants: 1,
